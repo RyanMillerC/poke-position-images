@@ -3,12 +3,14 @@
 > Create images used by poke-mode and poke-position
 
 This repository contains code to generate images required by
-[poke-mode](https://github.com/RyanMillerc/poke-mode/) and
+[poke-mode](https://github.com/RyanMillerC/poke-mode) and
 [poke-position](https://github.com/RyanMillerC/poke-position).
 
 It relies on images provided by [PokemonDB.net](https://pokemondb.net)
-and information provided by [PokeAPI](https://pokeapi.co/) to
+and information provided by [PokeAPI](https://pokeapi.co) to
 generate images.
+
+It uses [ImageMagick](https://imagemagick.org) to process images.
 
 ## Information
 

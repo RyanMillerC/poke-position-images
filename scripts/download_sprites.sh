@@ -11,6 +11,8 @@ BASE_API_URL='https://pokeapi.co/api/v2/pokemon'
 BASE_IMAGE_URL='https://img.pokemondb.net/sprites/sword-shield/icon'
 SPRITES_DIRECTORY='./assets/sprites'
 
+[[ ! -d "${SPRITES_DIRECTORY}" ]] && mkdir "${SPRITES_DIRECTORY}"
+
 for ((pokemon_id=1; pokemon_id<=25; pokemon_id++)) ; do
     api_response=$(curl -s "${BASE_API_URL}/${pokemon_id}")
     pokemon_name=$(jq -r '.name' <<< ${api_response})

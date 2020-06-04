@@ -9,6 +9,8 @@
 BASE_DIRECTORY='./assets/base'
 ELEMENTS_DIRECTORY='./assets/elements'
 
+[[ ! -d "${ELEMENTS_DIRECTORY}" ]] && mkdir "${ELEMENTS_DIRECTORY}"
+
 for image in $(find "${BASE_DIRECTORY}" -name '*.png') ; do
     image_base_name="${image##*/}"
     element_type="${image_base_name%%_*}"

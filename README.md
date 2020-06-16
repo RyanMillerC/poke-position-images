@@ -45,3 +45,13 @@ bundled with both packages.
 3. Mirror, trim, and resize sprites
 4. Overlay modified Pokemon sprites onto Base Images
 5. Create Element images from Base Images
+
+## Notes
+
+Pokemon data is from [pokemon.json](https://github.com/fanzeyi/pokemon.json).
+Data from that repo was striped down to only relevant fields: id, name,
+and type (primary). This is achieved with the command below.
+
+```
+jq -rM '.[] | {id: .id, name: .name.english|ascii_downcase, type: .type[0]|ascii_downcase }' pokedex.json > pokemon-data.json
+```

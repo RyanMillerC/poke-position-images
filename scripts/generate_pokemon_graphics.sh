@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-# Generate XPM files used by poke-mode.
+# Generate PNG files used by poke-mode.
 #
-# Generates XPM image files by layering cropped Pokemon sprites
+# Generates PNG image files by layering cropped Pokemon sprites
 # over elemental images to give the effect of them using an
 # elemental attack.
 #

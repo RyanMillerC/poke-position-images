@@ -12,7 +12,8 @@ SPRITES_DIRECTORY='./assets/sprites'
 
 [[ ! -d "${SPRITES_DIRECTORY}" ]] && mkdir "${SPRITES_DIRECTORY}"
 
-for ((iterator=0; iterator<=25; iterator++)) ; do
+number_of_pokemon=$(jq '. | length' pokemon-data.json)
+for ((iterator=0; iterator<number_of_pokemon; iterator++)) ; do
     pokemon_name=$(jq -r ".[${iterator}].name" pokemon-data.json)
     pokemon_type=$(jq -r ".[${iterator}].type" pokemon-data.json)
 

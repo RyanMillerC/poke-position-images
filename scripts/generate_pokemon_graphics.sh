@@ -9,7 +9,7 @@
 
 BASE_DIRECTORY='./assets/base'
 SPRITES_DIRECTORY='./assets/sprites'
-OUTPUT_DIRECTORY='./assets/output'
+OUTPUT_DIRECTORY='./assets/pokemon'
 
 [[ ! -d "${OUTPUT_DIRECTORY}" ]] && mkdir "${OUTPUT_DIRECTORY}"
 

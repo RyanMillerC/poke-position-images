@@ -7,16 +7,14 @@
 # into a local directory.
 #
 
-BASE_API_URL='https://pokeapi.co/api/v2/pokemon'
 BASE_IMAGE_URL='https://img.pokemondb.net/sprites/sword-shield/icon'
 SPRITES_DIRECTORY='./assets/sprites'
 
 [[ ! -d "${SPRITES_DIRECTORY}" ]] && mkdir "${SPRITES_DIRECTORY}"
 
-for ((pokemon_id=1; pokemon_id<=25; pokemon_id++)) ; do
-    api_response=$(curl -s "${BASE_API_URL}/${pokemon_id}")
-    pokemon_name=$(jq -r '.name' <<< ${api_response})
-    pokemon_type=$(jq -r '.types[] | select (.slot==1) | .type.name' <<< ${api_response})
+for ((iterator=0; iterator<=25; iterator++)) ; do
+    pokemon_name=$(jq -r ".[${iterator}].name" pokemon-data.json)
+    pokemon_type=$(jq -r ".[${iterator}].type" pokemon-data.json)
 
     output_directory="${SPRITES_DIRECTORY}/${pokemon_type}"
     [[ ! -d "${output_directory}" ]] && mkdir "${output_directory}"

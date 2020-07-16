@@ -7,6 +7,8 @@
 # elemental attack.
 #
 
+set -e
+
 BASE_DIRECTORY='./assets/base'
 SPRITES_DIRECTORY='./assets/sprites'
 OUTPUT_DIRECTORY='./assets/pokemon'
@@ -15,7 +17,7 @@ OUTPUT_DIRECTORY='./assets/pokemon'
 
 for type_directory in $(find "${SPRITES_DIRECTORY}" ! -path "${SPRITES_DIRECTORY}" -type d) ; do
     pokemon_type="${type_directory##*/}"
-    for image in $(find "${type_directory}" -name '*.png') ; do
+    find "${type_directory}" -name '*.png' | while read image ; do
         image_base_name="${image##*/}"
         temp_file="/tmp/${image_base_name}"
         output_file="${OUTPUT_DIRECTORY}/${image_base_name}"

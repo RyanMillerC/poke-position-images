@@ -7,8 +7,6 @@
 # elemental attack.
 #
 
-set -e
-
 BASE_DIRECTORY='./assets/base'
 SPRITES_DIRECTORY='./assets/sprites'
 OUTPUT_DIRECTORY='./assets/pokemon'

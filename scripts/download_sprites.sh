@@ -21,9 +21,14 @@ for ((iterator=0; iterator<number_of_pokemon; iterator++)) ; do
     [[ ! -d "${output_directory}" ]] && mkdir "${output_directory}"
     output_file="${SPRITES_DIRECTORY}/${pokemon_type}/${pokemon_name}.png"
 
-    pokemon_image_url="${BASE_IMAGE_URL}/${pokemon_name}.png"
+    url_safe_pokemon_name=$(echo "${pokemon_name}" | tr ' ' '-')
+    pokemon_image_url="${BASE_IMAGE_URL}/${url_safe_pokemon_name}.png"
     echo "Downloading ${pokemon_image_url} -> ${output_file}"
     curl -s "${pokemon_image_url}" -o "${output_file}"
+
+    # Verify a PNG image was downloaded
+    grep -q 'PNG' <<< $(file "${output_file}")
+    [[ $? == 0 ]] || >&2 echo "WARNING: ${output_file} does not appear to be valid a PNG image"
 done
 
 echo "Complete!"

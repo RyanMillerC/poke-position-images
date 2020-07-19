@@ -4242,7 +4242,8 @@
   {
     "id": 849,
     "name": "toxtricity",
-    "type": "electric"
+    "type": "electric",
+    "spriteName": "toxtricity-low-key"
   },
   {
     "id": 850,

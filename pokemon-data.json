@@ -4441,12 +4441,14 @@
   {
     "id": 888,
     "name": "zacian",
-    "type": "fairy"
+    "type": "fairy",
+    "spriteName": "zacian-crowned"
   },
   {
     "id": 889,
     "name": "zamazenta",
-    "type": "fighting"
+    "type": "fighting",
+    "spriteName": "zamazenta-crowned"
   },
   {
     "id": 890,

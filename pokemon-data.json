@@ -4385,7 +4385,8 @@
   {
     "id": 877,
     "name": "morpeko",
-    "type": "electric"
+    "type": "electric",
+    "spriteName": "morpeko-full-belly"
   },
   {
     "id": 878,

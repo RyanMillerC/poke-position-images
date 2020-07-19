@@ -4379,7 +4379,8 @@
   {
     "id": 876,
     "name": "indeedee",
-    "type": "psychic"
+    "type": "psychic",
+    "spriteName": "indeedee-male"
   },
   {
     "id": 877,

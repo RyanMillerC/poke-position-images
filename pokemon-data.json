@@ -4373,7 +4373,8 @@
   {
     "id": 875,
     "name": "eiscue",
-    "type": "ice"
+    "type": "ice",
+    "spriteName": "eiscue-ice"
   },
   {
     "id": 876,

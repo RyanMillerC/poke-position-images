@@ -22,7 +22,10 @@ for type_directory in $(find "${SPRITES_DIRECTORY}" ! -path "${SPRITES_DIRECTORY
         echo "Processing ${image} -> ${output_file}"
         convert "${image}" -flop \
                            -trim \
-                           -resize '20x30>' \
+                           -resize '20>x30>' \
+                           -background none \
+                           -gravity center \
+                           -extent '20x30' \
                            -unsharp 0x.5 \
                            "${temp_file}"
         convert "${BASE_DIRECTORY}/${pokemon_type}_base.png" \
